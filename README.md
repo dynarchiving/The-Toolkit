@@ -4,7 +4,7 @@
 The aim of the project is to contribute to the slowly but surely emerging debate on data bias and to offer approaches to de-bias knowledge production and confront the existing bias in archives.
 
 ## What is "Dynarchiving"?
-"Dynarchiving" is meant as a creative and practical intervention to address an as yet oftentimes overlooked problematic.
+It is designed as a creative and practical intervention to address an as yet oftentimes overlooked problematic.
 Learn more about the arguments, relevant reading material, tools and projects by others here: [www.dynarchiving.com](https://dynarchiving.com/)
 
 
@@ -49,5 +49,9 @@ For more, see:
 
 ## Where can I find more information?
 - [www.dynarchiving.com](www.dynarchiving.com)
+  
 ## How can I get in touch?
 - [contact info](https://dynarchiving.com/imprint/)
+
+## Other support
+The research for and work on “Dynarchiving” was possible thanks to a fellowship at Heinz Heinen Kolleg as part of the [Bonn Center for Dependency and Slavery Studies BCDSS](https://www.dependency.uni-bonn.de/en) (May-August 2025).
