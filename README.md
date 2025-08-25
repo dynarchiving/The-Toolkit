@@ -3,8 +3,12 @@
 
 The aim of the project is to contribute to the slowly but surely emerging debate on data bias and to offer approaches to de-bias knowledge production and confront the existing bias in archives.
 
+## What is "Dynarchiving"?
+"Dynarchiving" is meant as a creative and practical intervention to address an as yet oftentimes overlooked problematic.
+Learn more about the arguments, relevant reading material, tools and projects by others here: [www.dynarchiving.com](https://dynarchiving.com/)
 
-## What does "Dynarchving" consist of?
+
+## What does "The Toolkit" consist of?
 
 It provides a practical tool-kit for archival institutions like museums, libraries, universities, archives of any kind. They can add the free tools to their websites, i.e. single posts or pages: historical records, databases, digitized papers, any kind of archival material they publish.
 
