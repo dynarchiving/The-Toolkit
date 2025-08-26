@@ -1,1 +1,41 @@
+<style>
+  @keyframes key {
+}
 
+  .cursor-trail {
+    width: 800px;
+    height: 2px;
+    background-color: rgba(58, 67, 101, 0.66);
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: key 5s forwards;
+    animation-iteration-count: 2;
+    z-index: 9999;
+  }
+  body {
+  cursor: none;
+}
+</style>
+
+<script>
+  function createTrail(x, y) {
+    const trail = document.createElement("div");
+    trail.className = "cursor-trail";
+    trail.style.left = `${x}px`;
+    trail.style.top = `${y}px`;
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 2000);
+  }
+
+  document.addEventListener("mousemove", (e) => {
+    createTrail(e.clientX, e.clientY);
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0];
+    if (touch) {
+      createTrail(touch.clientX, touch.clientY);
+    }
+  }, { passive: true });
+</script>
