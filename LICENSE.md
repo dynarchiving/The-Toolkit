@@ -24,7 +24,7 @@ Under the following terms:
 
 - **ATTRIBUTION** – You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
   
-  <ins>This is how to credit any part of the toolkit:</ins>
+  <ins>This is how to credit any part of the toolkit, it has to be mentioned on your website's imprint (for questions about other options please get in touch):</ins>
   >**This tool was created by and taken from www.dynarchiving.com.**
 
 
