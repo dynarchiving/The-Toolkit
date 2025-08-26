@@ -1,1 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Popup Messages</title>
 
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+ #popup {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 400px;
+  height: auto;
+  max-height: 90vh;
+  background-color: #f1f6f6;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  animation: fadeIn 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+
+#popup h4 {
+  display: flex;
+  align-items: center;               /* enables flex layout */ 
+  height: 30px;
+  border-radius: 4px; 
+  padding: 20px 20px;
+  background-color: #1132b1;
+  border-bottom: 1px solid #ddd;
+  font-size: 20px;
+  font-weight:normal;
+  color: #f1f6f6;
+}
+
+.logo {
+  height: 100%;       
+  width: auto; 
+  border-radius: 50%;            
+  vertical-align: middle;
+  margin-right: 20px;
+  max-height: 100%;        
+}
+
+#closeBtn {
+  position: absolute;
+  top: 27px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight:normal;
+  color: #f1f6f6;
+  cursor: pointer;
+  }
+
+#messageContainer {
+  padding: 0px 20px;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#messageText {
+  margin: 10px;
+  padding-top: 0px;
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #1132b1;
+  flex-shrink: 1;
+}
+
+#bottom-section {
+  flex-shrink: 0;
+  background-color: #b0b0b2;
+  padding: 10px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+
+.bottom-section-text {
+  margin-top: 8px;
+  display: flex;
+  gap: 12px;
+}
+
+.bottom-section-text a {
+  font-size: 10px;
+  color: #333;
+  text-decoration: underline;
+}
+
+.bottom-section-text a:hover {
+  text-decoration: underline;
+}
+
+  #bottom-controls {
+  position: absolute;
+  bottom: 15px;
+  left: 20px;
+}
+
+  #pauseBtn {
+  background: #333;
+  color: #f1f6f6;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  padding: 10px;
+}
+
+
+
+#reopenBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  background-color: #f1f6f6;
+  color: #333;
+  border: 2px solid #333;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  cursor: pointer;
+  display: none; 
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+#reopenBtn:hover {
+  background-color: #f0f0f0;
+}
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="popup">
+  <h4>
+    <img src="https://dynarchiving.com/wp-content/uploads/2025/05/logo_dynarchiving-clear.gif" alt="Logo" class="logo" />
+    DYNARCHIVING
+    <button id="closeBtn">&times;</button>
+  </h4>
+
+   <div id="messageContainer">
+  <div id="messageText"></div>
+  </div>
+
+  <div id="bottom-section">
+  <button id="pauseBtn" title="Pause">&#10072;&#10072;</button>
+  <div class="bottom-section-text">
+    <a href="https://www.dynarchiving.com">www.dynarchiving.com</a>
+  </div>
+</div>
+</div>
+
+<button id="reopenBtn" title="show the messages!">&#8679;</button>
+
+  <script>
+    const popup = document.getElementById('popup');
+    const messageText = document.getElementById('messageText');
+    const closeBtn = document.getElementById('closeBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+    const reopenBtn = document.getElementById('reopenBtn');
+    
+
+
+    const messages = [
+      "How complete or whole is the subset/collection/dataset you are looking at?",
+      "How do the classificatory systems used in cataloguing material culture objects reflect colonial or Eurocentric worldviews, and what are the implications for how these objects are interpreted and displayed today?",
+      "How was the object acquired?",
+      "What voices are silenced in the archives?",
+      "Where are you sitting right now: what can you see beyond the screen of your computer?",
+      "If there is loot in a 'collection', can it still be called a collection?",
+      "What is your research question, topic, interest?",
+      "What post-creator actors have intervened with the nature, structure, and shape of the subset/ collection/ dataset you are looking at?",
+      "Museums have historically framed material artifacts within narratives that prioritize imperial collecting practices and Western epistemologies. This structural bias often silences the object's original context, use, and cultural voice.",
+      "What do we know about the object's origin?",
+      "What is your positionality?",
+      "How does your body feel right at this moment?",
+      "Which languages are available for browsing? Which ones aren't?",
+      "What are you looking for? What did you find? What is missing?",
+      "What transformations had the record or record collection you are looking at gone through in its life as an archival record or entity in a dataset?",
+      "Select a museum object or archival document and examine whose histories are being told and whose are left out. – How might community-based knowledge or alternative epistemologies challenge or enrich its interpretation and representation?",
+      "In what ways has the object been identified?",
+      "What are your own biases?",
+      "Beware the seduction of quantification.",
+      "How many Black, Indigenous, or Asian women can you find in this online database? What about white European or US-American men?",
+      "Who is mentioned in the document and who is not?",
+      "Is the object part of a group? If so, do we know where the other objects are now? How come they are separated upon circulation?",
+      "The archive is haunted. It is partial. It is fragmentary. Approach it not as a repository of truth, but as a terrain of struggle.",
+      "If this artwork or cultural belonging could talk to you about its life, what would it say on its inception, its translocation, and its exhibition?",
+      "Who wrote this document and with what purpose? What are the power structures behind these words? Which terminology is used to describe and categorize people? Which references are made to emotions, senses, material culture?",
+     ];
+
+     shuffle(messages);
+
+    let messagesIndex = 0;
+      let intervalId = null;
+  let isPaused = false;
+
+  function showMessage() {
+    if (!isPaused) {
+      messageText.textContent = messages[messagesIndex];
+      popup.style.display = 'block';
+      adjustMessageHeight();
+      messagesIndex = (messagesIndex + 1) % messages.length;
+    }
+  }
+
+
+  function startMessages() {
+    intervalId = setInterval(showMessage, 10000);
+  }
+
+  function stopMessages() {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+
+  pauseBtn.addEventListener('click', () => {
+    isPaused = !isPaused;
+    if (isPaused) {
+      pauseBtn.innerHTML = "&#9658;";
+      stopMessages();
+    } else {
+      pauseBtn.innerHTML = "&#10072;&#10072;"; 
+      showMessage(); // Show immediately
+      startMessages();
+    }
+  });
+
+  function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]]; // swap
+  }
+}
+
+window.addEventListener('resize', adjustMessageHeight);
+
+  function adjustMessageHeight() {
+  const popup = document.getElementById('popup');
+  const header = popup.querySelector('h4');
+  const footer = document.getElementById('bottom-section');
+  const messageContainer = document.getElementById('messageContainer');
+
+  const maxHeight = window.innerHeight * 0.9;
+  const usedHeight = header.offsetHeight + footer.offsetHeight;
+
+  messageContainer.style.maxHeight = `${maxHeight - usedHeight}px`;
+
+  popup.style.height = 'auto';
+}
+
+  closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+  reopenBtn.style.display = 'flex'; // show the speech bubble
+});
+
+reopenBtn.addEventListener('click', () => {
+  popup.style.display = 'block';
+  reopenBtn.style.display = 'none'; // hide the bubble again
+});
+
+  // Start showing messages
+  setTimeout(() => {
+    showMessage();
+    startMessages();
+  }, 1000);
+  </script>
+
+</body>
+</html>
