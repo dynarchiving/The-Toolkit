@@ -16,7 +16,8 @@ The tools address users at the exact moment when they are accessing and searchin
 
 For the time being, these tools are:
 
-- 2 custom cursors
+- 2 custom cursors – with an endless loop
+- 2 custom cursors – the loop stops after 15 seconds
 - 1 message-bot
 - 1 chatbot
 
@@ -29,11 +30,16 @@ Overview: [The Tools](https://dynarchiving.com/the-tools/)
 You can even try them out!
 
 - [The Cursor No. 1](https://dynarchiving.com/tools-cursor-1/)
-- [The Cursor No. 2](https://dynarchiving.com/tools-cursor-2/)
+- [The Cursor No. 1 v1](https://dynarchiving.com/tools-cursor-1-v1/)
+- [The Cursor No. 2](https://dynarchiving.com/tools-cursor-2-v1/)
+- [The Cursor No. 2 v1](https://dynarchiving.com/tools-cursor-1/)
 - [The Message-Bot](https://dynarchiving.com/tools-the-message-bot/)
 - [The Chatbot](https://dynarchiving.com/tools-the-chatbot/)
 
 
+## How to implement them?
+Just add them via HTML to the body of the respective site, page or post.
+If your website is based on Wordpress, just add a custom HTML block, then drop the code in the html field – done.
 
 ## Who is "Dynarchiving" for?
 Archival institutions like museums, libraries, universities – websites that publish archival material, historical records of any kind.
