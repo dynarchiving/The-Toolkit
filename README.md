@@ -10,7 +10,7 @@ Learn more about the arguments, relevant reading material, tools and projects by
 
 ## What does "The Toolkit" consist of?
 
-It provides a practical tool-kit for archival institutions like museums, libraries, universities, archives of any kind. They can add the free tools to their websites, i.e. single posts or pages: historical records, databases, digitized papers, any kind of archival material they publish.
+It provides a practical tool-kit for archival institutions like museums, libraries, universities, archives of any kind in GLAM work spaces. They can add the free tools to their websites, i.e. single posts or pages: historical records, databases, digitized papers, any kind of archival material they publish.
 
 The tools address users at the exact moment when they are accessing and searching the respective sites.
 
