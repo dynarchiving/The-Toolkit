@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<!-- Please leave this source credit: This tool was created by Anne Haeming as part of www.dynarchiving.com (2025) -->
+
+<style>
+  @keyframes key {
+    from {
+    opacity: 1;
+    background-color: rgba(164, 221, 237);
+    } to {
+        opacity: 0.8;
+        background-color: rgb(0, 0, 0);
+        }
+}
+
+  .cursor-trail {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: key 1s forwards;
+    animation-iteration-count: 3;
+    z-index: 9999;
+  }
+  body {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="56px" height="56px"><circle cx="28" cy="28" r="28" fill="rgba(164, 221, 237)" fill-opacity="0"/></svg>') 28 28, auto;
+}
+</style>
+
+<script>
+  let cursorActive = true;
+  function createTrail(x, y) {
+    if (!cursorActive) return; 
+    const trail = document.createElement("div");
+    trail.className = "cursor-trail";
+    trail.style.left = `${x}px`;
+    trail.style.top = `${y}px`;
+    document.body.appendChild(trail);
+    setTimeout(() => trail.remove(), 4000);
+  }
+
+  document.addEventListener("mousemove", (e) => {
+    createTrail(e.clientX, e.clientY);
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0];
+    if (touch) {
+      createTrail(touch.clientX, touch.clientY);
+    }
+  }, { passive: true });
+
+setTimeout(() => {
+  cursorActive = false;             
+  document.body.style.cursor = `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="54px" height="54px"><circle cx="27" cy="27" r="27" fill="rgba(164, 221, 237)" fill-opacity="0.5"/></svg>') 27 27, auto`;
+}, 15000);
+
+</script>
+
+</html>
