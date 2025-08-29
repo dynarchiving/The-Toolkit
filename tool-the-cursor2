@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="de">
+<!-- Please leave this source credit: This tool was created by Anne Haeming as part of www.dynarchiving.com (2025) -->
+
 <style>
   @keyframes key {
 }
@@ -39,3 +43,5 @@
     }
   }, { passive: true });
 </script>
+
+</html>
