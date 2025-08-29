@@ -37,7 +37,7 @@ You can even try them out!
 - [The Chatbot](https://dynarchiving.com/tools-the-chatbot/)
 
 
-## How to implement them?
+## How to implement the tools?
 Just add them via HTML to the body of the respective site, page or post.
 If your website is based on Wordpress, just add a custom HTML block, then drop the code in the html field – done.
 
