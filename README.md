@@ -32,7 +32,7 @@ You can even try them out!
 - [The Cursor No. 1](https://dynarchiving.com/tools-cursor-1/)
 - [The Cursor No. 1 v1](https://dynarchiving.com/tools-cursor-1-v1/)
 - [The Cursor No. 2](https://dynarchiving.com/tools-cursor-2-v1/)
-- [The Cursor No. 2 v1](https://dynarchiving.com/tools-cursor-1/)
+- [The Cursor No. 2 v1](https://dynarchiving.com/tools-cursor-2-v1/)
 - [The Message-Bot](https://dynarchiving.com/tools-the-message-bot/)
 - [The Chatbot](https://dynarchiving.com/tools-the-chatbot/)
 
