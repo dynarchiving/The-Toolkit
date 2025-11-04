@@ -218,6 +218,16 @@
       "The archive is haunted. It is partial. It is fragmentary. Approach it not as a repository of truth, but as a terrain of struggle.",
       "If this artwork or cultural belonging could talk to you about its life, what would it say on its inception, its translocation, and its exhibition?",
       "Who wrote this document and with what purpose? What are the power structures behind these words? Which terminology is used to describe and categorize people? Which references are made to emotions, senses, material culture?",
+      "What gaps exist in current research?",
+      "What gaps are you trying to fill in your research? Time period, geography, actors, concepts?",
+      "Are there gaps and/or silences in your data collection process?",
+      "How does the social, political, economic, cultural, academic context you are embedded in impact your choice of research?",
+      "Are you a person from and/or conducting research in a place that was a colonial power? How can you then use the benefits of your context to advance the deconstruction of existing power structures?",
+      "Who is represented in the scholarship and sources that are used?",
+      "Who is and who is not represented in the data?",
+      "Who (legally) owns the data you will produce?",
+      "Do you have any ethical concerns about the research? Think of: harm that can be done, accessibility issues, etc.",
+      "Where does the data come from? What is the context of its creation/inheritance?",
      ];
 
      shuffle(messages);
